@@ -25,12 +25,51 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final int _counter = 0;
+  int _counter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      appBar: AppBar(
+        toolbarHeight: 75,
+        backgroundColor: Colors.indigo,
+        centerTitle: true,
+        title: Text(
+          "Counter App",
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 35,
+          ),
+        ),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              _counter.toString(),
+              style: TextStyle(
+                fontSize: 125,
+                color: Colors.indigo,
+              ),
+            ),
+            Row(
+              children: [
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _counter++;
+                    });
+                  },
+                  child: Icon(
+                    Icons.add,
+                  ),
+                ),
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }
