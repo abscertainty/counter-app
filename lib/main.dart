@@ -54,6 +54,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
                   onPressed: () {
@@ -61,8 +62,48 @@ class _HomePageState extends State<HomePage> {
                       _counter++;
                     });
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo,
+                  ),
                   child: Icon(
                     Icons.add,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      if (_counter > 0) {
+                        _counter--;
+                      }
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo,
+                  ),
+                  child: Icon(
+                    Icons.remove,
+                    color: Colors.white,
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _counter = 0;
+                    });
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo,
+                  ),
+                  child: Icon(
+                    Icons.restart_alt_rounded,
+                    color: Colors.white,
                   ),
                 ),
               ],
